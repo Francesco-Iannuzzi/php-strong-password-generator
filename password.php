@@ -48,16 +48,10 @@ session_start();
             <div class="card border-0 bg-secondary p-4 mt-5">
 
                 <div class="pt-3">
-                    <?php if ($_SESSION['password'] !== '') : ?>
-                        <div class="alert alert-primary" role="alert">
-                            <h6>This is your new Password:</h6>
-                            <h3><?= $_SESSION['password'] ?></h3>
-                        </div>
-                    <?php else : ?>
-                        <div class="alert alert-danger" role="alert">
-                            <h6>Choose Password lenght</h6>
-                        </div>
-                    <?php endif; ?>
+                    <div class="alert alert-primary" role="alert">
+                        <h6>This is your new Password:</h6>
+                        <h3><?= $_SESSION['password'] ?></h3>
+                    </div>
                 </div>
                 <!-- /alert password -->
 
