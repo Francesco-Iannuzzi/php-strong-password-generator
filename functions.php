@@ -37,4 +37,6 @@ if (!empty($_GET['passwordLength'])) {
     }
 
     $password = generatePassword($passwordLength) . '@boolean.com';
+
+    header("Location: /password.php");
 }

@@ -49,8 +49,8 @@ require __DIR__ . '/functions.php';
                     <!-- /select characters -->
 
                     <div class="buttons d-flex gap-4">
-                        <button type="submit" class="btn rounded-4 btn-primary">Submit</button>
-                        <button type="reset" class="btn rounded-4 btn-warning">Reset</button>
+                        <button type="submit" class="btn rounded-2 btn-primary">Submit</button>
+                        <button type="reset" class="btn rounded-2 btn-danger">Reset</button>
                     </div>
                     <!-- /buttons -->
 
