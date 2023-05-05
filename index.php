@@ -27,9 +27,9 @@ if (!empty($_GET['passwordLength'])) {
     function generatePassword($length)
     {
         $passwordRandom = '';
-        $chars = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
+        $characters = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!"#$%&()*+,-./:;<=>?@[\]^_`{|}~';
         for ($i = 0; $i < $length; $i++) {
-            $passwordRandom .= $chars[rand(0, strlen($chars) - 1)];
+            $passwordRandom .= $characters[rand(0, strlen($characters) - 1)];
         }
         return $passwordRandom;
     }
