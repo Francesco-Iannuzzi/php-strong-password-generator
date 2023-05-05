@@ -19,6 +19,25 @@ Gestire ulteriori parametri per la password: quali caratteri usare fra numeri, l
 
 */
 
+if (!empty($_GET['passwordLength'])) {
+
+    $passwordLength = intval($_GET['passwordLength']);
+
+
+    function generatePassword($length)
+    {
+        $passwordRandom = '';
+        $chars = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
+        for ($i = 0; $i < $length; $i++) {
+            $passwordRandom .= $chars[rand(0, strlen($chars) - 1)];
+        }
+        return $passwordRandom;
+    }
+
+    $password = generatePassword($passwordLength) . '@boolean.com';
+
+    var_dump($password);
+}
 
 ?>
 
@@ -34,21 +53,24 @@ Gestire ulteriori parametri per la password: quali caratteri usare fra numeri, l
     <title>PHP Password Generator</title>
 </head>
 
-<body class="bg-dark">
+<body class="bg-light">
 
-    <main>
+    <main class="bg-dark">
         <div class="container text-light text-center py-5">
+
             <div class="title">
                 <h1 class="text-secondary">Strong Password Generator</h1>
                 <h3>Genera una password sicura</h3>
             </div>
             <!-- /.title -->
-            <div class="card border-0 bg-secondary p-4">
+
+            <div class="card border-0 bg-secondary p-4 mt-5">
+
                 <form action="" method="GET">
                     <div class="d-flex justify-content-between">
-                        <label for="password_length">Choose Password length</label>
-                        <select class="form-select w-25" name="password_length" id="password_length" aria-label="Default select example">
-                            <option selected>Choose Password length:</option>
+
+                        <label for="passwordLength">Choose Password length: </label>
+                        <select class="form-select w-25" name="passwordLength" id="passwordLength" aria-label="Default select example">
                             <option value="1">One Character</option>
                             <option value="2">Two Characters</option>
                             <option value="3">Three Characters</option>
@@ -61,12 +83,19 @@ Gestire ulteriori parametri per la password: quali caratteri usare fra numeri, l
                             <option value="10">Ten Characters</option>
                         </select>
                     </div>
-                    <div class="d-flex gap-4">
+                    <!-- /select characters -->
+
+                    <div class="buttons d-flex gap-4">
                         <button type="submit" class="btn rounded-4 btn-primary">Submit</button>
                         <button type="reset" class="btn rounded-4 btn-warning">Reset</button>
                     </div>
+                    <!-- /buttons -->
+
                 </form>
+                <!-- /form -->
+
             </div>
+            <!-- /card -->
 
         </div>
     </main>
