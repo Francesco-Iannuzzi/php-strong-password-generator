@@ -49,20 +49,8 @@ require __DIR__ . '/functions.php';
 
                 <form action="" method="GET">
                     <div class="d-flex justify-content-between pb-5">
-
                         <label for="passwordLength">Choose Password length: </label>
-                        <select class="form-select w-25" name="passwordLength" id="passwordLength" aria-label="Default select example">
-                            <option value="1">One Character</option>
-                            <option value="2">Two Characters</option>
-                            <option value="3">Three Characters</option>
-                            <option value="4">Four Characters</option>
-                            <option value="5">Five Characters</option>
-                            <option value="6">Six Characters</option>
-                            <option value="7">Seven Characters</option>
-                            <option value="8">Eight Characters</option>
-                            <option value="9">Nine Characters</option>
-                            <option value="10">Ten Characters</option>
-                        </select>
+                        <input type="text" class="form-control w-25" name="passwordLength" id="passwordLength" placeholder="Number of characters">
                     </div>
                     <!-- /select characters -->
 

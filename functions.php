@@ -25,22 +25,24 @@ $password = '';
 
 if (!empty($_GET['passwordLength'])) {
 
-    $passwordLength = intval($_GET['passwordLength']);
+    $passwordLength = $_GET['passwordLength'];
 
 
-    function generatePassword($length)
-    {
-        $passwordRandom = '';
-        $characters = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!"#$%&()*+,-./:;<=>?@[\]^_`{|}~';
-        for ($i = 0; $i < $length; $i++) {
-            $passwordRandom .= $characters[rand(0, strlen($characters) - 1)];
+    if (is_numeric($passwordLength)) {
+        function generatePassword($length)
+        {
+            $passwordRandom = '';
+            $characters = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!"#$%&()*+,-./:;<=>?@[\]^_`{|}~';
+            for ($i = 0; $i < $length; $i++) {
+                $passwordRandom .= $characters[rand(0, strlen($characters) - 1)];
+            }
+            return $passwordRandom;
         }
-        return $passwordRandom;
+
+        $password = generatePassword($passwordLength) . '@boolean.com';
+
+        header("Location: /password.php");
+
+        $_SESSION['password'] = $password;
     }
-
-    $password = generatePassword($passwordLength) . '@boolean.com';
-
-    header("Location: /password.php");
-
-    $_SESSION['password'] = $password;
 }
