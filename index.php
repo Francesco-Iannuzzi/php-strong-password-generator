@@ -47,10 +47,10 @@ require __DIR__ . '/functions.php';
 
             <div class="card border-0 bg-secondary p-4 mt-5">
 
-                <form action="" method="GET">
+                <form method="GET">
                     <div class="d-flex justify-content-between pb-5">
                         <label for="passwordLength">Choose Password length: </label>
-                        <input type="text" class="form-control w-25" name="passwordLength" id="passwordLength" placeholder="Number of characters">
+                        <input type="number" class="form-control w-25" name="passwordLength" id="passwordLength" placeholder="Number of characters">
                     </div>
                     <!-- /select characters -->
 
