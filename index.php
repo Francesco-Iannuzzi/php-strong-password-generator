@@ -16,21 +16,39 @@ require __DIR__ . '/functions.php';
     <title>PHP Password Generator</title>
 </head>
 
-<body class="bg-light">
+<body class="bg-dark">
+
+    <header>
+
+        <nav class="nav justify-content-center py-3 bg-light">
+            <a class="nav-link text-danger" href="#">
+                <h6>Home</h6>
+            </a>
+            <a class="nav-link" href="#">
+                <h6>About</h6>
+            </a>
+            <a class="nav-link" href="#">
+                <h6>Contact</h6>
+            </a>
+        </nav>
+        <!-- /navbar -->
+
+    </header>
+    <!-- /header -->
 
     <main class="bg-dark">
-        <div class="container text-light text-center py-5">
+        <div class="container w-75 text-light text-center py-5">
 
             <div class="title">
                 <h1 class="text-secondary">Strong Password Generator</h1>
-                <h3>Generate a secure password</h3>
+                <h3>Generate a Secure Password</h3>
             </div>
             <!-- /.title -->
 
             <div class="card border-0 bg-secondary p-4 mt-5">
 
                 <form action="" method="GET">
-                    <div class="d-flex justify-content-between">
+                    <div class="d-flex justify-content-between pb-5">
 
                         <label for="passwordLength">Choose Password length: </label>
                         <select class="form-select w-25" name="passwordLength" id="passwordLength" aria-label="Default select example">
@@ -48,7 +66,10 @@ require __DIR__ . '/functions.php';
                     </div>
                     <!-- /select characters -->
 
-                    <div class="buttons d-flex gap-4">
+                    <hr>
+                    <!-- divisory -->
+
+                    <div class="buttons d-flex justify-content-center gap-4">
                         <button type="submit" class="btn rounded-2 btn-primary">Submit</button>
                         <button type="reset" class="btn rounded-2 btn-danger">Reset</button>
                     </div>
@@ -56,29 +77,16 @@ require __DIR__ . '/functions.php';
 
                 </form>
                 <!-- /form -->
-
-                <div class="pt-3">
-                    <?php if ($password !== '') : ?>
-                        <div class="alert alert-primary" role="alert">
-                            <h6>This is your new Password:</h6>
-                            <h3><?= $password ?></h3>
-                        </div>
-                    <?php else : ?>
-                        <div class="alert alert-danger" role="alert">
-                            <h6>Choose Password lenght</h6>
-                        </div>
-                    <?php endif; ?>
-                </div>
-                <!-- /alert password -->
-
             </div>
             <!-- /card -->
 
         </div>
     </main>
+    <!-- /main -->
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
     <!-- /Bootstrap script -->
+
 </body>
 
 </html>

@@ -19,6 +19,8 @@ Gestire ulteriori parametri per la password: quali caratteri usare fra numeri, l
 
 */
 
+session_start();
+
 $password = '';
 
 if (!empty($_GET['passwordLength'])) {
@@ -39,4 +41,6 @@ if (!empty($_GET['passwordLength'])) {
     $password = generatePassword($passwordLength) . '@boolean.com';
 
     header("Location: /password.php");
+
+    $_SESSION['password'] = $password;
 }
