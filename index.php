@@ -19,6 +19,8 @@ Gestire ulteriori parametri per la password: quali caratteri usare fra numeri, l
 
 */
 
+$password = '';
+
 if (!empty($_GET['passwordLength'])) {
 
     $passwordLength = intval($_GET['passwordLength']);
@@ -35,8 +37,6 @@ if (!empty($_GET['passwordLength'])) {
     }
 
     $password = generatePassword($passwordLength) . '@boolean.com';
-
-    var_dump($password);
 }
 
 ?>
@@ -93,6 +93,20 @@ if (!empty($_GET['passwordLength'])) {
 
                 </form>
                 <!-- /form -->
+
+                <div class="pt-3">
+                    <?php if ($password !== '') : ?>
+                        <div class="alert alert-primary" role="alert">
+                            <h6>This is your new Password:</h6>
+                            <h3><?= $password ?></h3>
+                        </div>
+                    <?php else : ?>
+                        <div class="alert alert-danger" role="alert">
+                            <h6>Choose Password lenght</h6>
+                        </div>
+                    <?php endif; ?>
+                </div>
+                <!-- /alert password -->
 
             </div>
             <!-- /card -->
