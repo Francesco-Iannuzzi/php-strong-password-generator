@@ -39,9 +39,9 @@ if (!empty($_GET['passwordLength'])) {
             return $passwordRandom;
         }
 
-        $password = generatePassword($passwordLength) . '@boolean.com';
+        $password = generatePassword($passwordLength);
 
-        header("Location: password.php");
+        header("Location: /password.php");
 
         $_SESSION['password'] = $password;
     }
