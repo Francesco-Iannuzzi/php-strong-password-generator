@@ -41,7 +41,7 @@ if (!empty($_GET['passwordLength'])) {
 
         $password = generatePassword($passwordLength);
 
-        header("Location: /password.php");
+        header("Location: ./password.php");
 
         $_SESSION['password'] = $password;
     }
